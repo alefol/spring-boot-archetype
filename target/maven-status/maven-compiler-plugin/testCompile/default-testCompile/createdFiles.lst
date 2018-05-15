@@ -1,0 +1,7 @@
+com\alefol\mySpringBootArtifact\integration\CucumberRoot.class
+com\alefol\mySpringBootArtifact\retry\Retry.class
+com\alefol\mySpringBootArtifact\retry\RetryRule$1.class
+com\alefol\mySpringBootArtifact\retry\RetryException.class
+com\alefol\mySpringBootArtifact\acceptance\ApplicationE2E.class
+com\alefol\mySpringBootArtifact\retry\RetryRule.class
+com\alefol\mySpringBootArtifact\sanity\ApplicationSanityCheck_ITT.class

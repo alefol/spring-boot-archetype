@@ -1,0 +1,28 @@
+spring:
+  jackson:
+    default-property-inclusion: non_null
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    tomcat:
+      max-active: 10
+      max-idle: 10000
+      max-wait: 10000
+      test-on-borrow: true
+    url: jdbc:postgresql://localhost:5432/mydb
+    username: postgres
+    password: admin
+    driver-class-name: org.postgresql.Driver
+
+
+initialDelay: 10000
+fixedDelay: 60000
+
+server:
+  tomcat:
+    accessLog.enabled: true
+    basedir: "${LOG_PATH}/Application"
+    accessLogPattern: "%h %l %u %t \"%r\" %s %b %D"
+
+
