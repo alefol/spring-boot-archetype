@@ -1,6 +1,6 @@
-C:\Users\Alexandre\Documents\Projets\test-archetype\mySpringBootArtifact\src\test\java\com\alefol\mySpringBootArtifact\retry\RetryRule.java
-C:\Users\Alexandre\Documents\Projets\test-archetype\mySpringBootArtifact\src\test\java\com\alefol\mySpringBootArtifact\integration\CucumberRoot.java
-C:\Users\Alexandre\Documents\Projets\test-archetype\mySpringBootArtifact\src\test\java\com\alefol\mySpringBootArtifact\retry\RetryException.java
-C:\Users\Alexandre\Documents\Projets\test-archetype\mySpringBootArtifact\src\test\java\com\alefol\mySpringBootArtifact\acceptance\ApplicationE2E.java
-C:\Users\Alexandre\Documents\Projets\test-archetype\mySpringBootArtifact\src\test\java\com\alefol\mySpringBootArtifact\sanity\ApplicationSanityCheck_ITT.java
-C:\Users\Alexandre\Documents\Projets\test-archetype\mySpringBootArtifact\src\test\java\com\alefol\mySpringBootArtifact\retry\Retry.java
+C:\Users\Acii\Documents\Projets\spring-boot-archetype\src\test\java\com\alefol\mySpringBootArtifact\integration\CucumberRoot.java
+C:\Users\Acii\Documents\Projets\spring-boot-archetype\src\test\java\com\alefol\mySpringBootArtifact\sanity\ApplicationSanityCheck_ITT.java
+C:\Users\Acii\Documents\Projets\spring-boot-archetype\src\test\java\com\alefol\mySpringBootArtifact\acceptance\ApplicationE2E.java
+C:\Users\Acii\Documents\Projets\spring-boot-archetype\src\test\java\com\alefol\mySpringBootArtifact\retry\RetryRule.java
+C:\Users\Acii\Documents\Projets\spring-boot-archetype\src\test\java\com\alefol\mySpringBootArtifact\retry\RetryException.java
+C:\Users\Acii\Documents\Projets\spring-boot-archetype\src\test\java\com\alefol\mySpringBootArtifact\retry\Retry.java

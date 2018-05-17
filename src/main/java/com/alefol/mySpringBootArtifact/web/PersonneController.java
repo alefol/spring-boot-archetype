@@ -16,9 +16,9 @@ import com.alefol.mySpringBootArtifact.service.PersonneService;
 
 @RestController
 @RequestMapping("/application")
-public class ApplicationController {
+public class PersonneController {
 
-    private static final Logger log = LoggerFactory.getLogger(ApplicationController.class);
+    private static final Logger log = LoggerFactory.getLogger(PersonneController.class);
 
     @Autowired
     private PersonneService personneService;
@@ -31,8 +31,5 @@ public class ApplicationController {
         return personneService.getAllPersonnes();
 
     }
-
-
-
 
 }
