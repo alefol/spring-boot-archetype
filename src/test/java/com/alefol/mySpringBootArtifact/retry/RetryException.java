@@ -15,7 +15,12 @@ import javax.validation.constraints.NotNull;
  */
 public final class RetryException extends RuntimeException {
 
-    private RetryException(@NotNull String message) {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -8638393048204435901L;
+
+	private RetryException(@NotNull String message) {
         super(message);
     }
 

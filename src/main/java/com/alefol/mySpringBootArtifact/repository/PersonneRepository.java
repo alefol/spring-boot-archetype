@@ -6,4 +6,5 @@ import com.alefol.mySpringBootArtifact.bean.PersonneBean;
 
 public interface PersonneRepository extends JpaRepository<PersonneBean, Long> {
 
+	public PersonneBean findByEmail(String email);
 }

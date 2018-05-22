@@ -1,16 +1,16 @@
 package com.alefol.mySpringBootArtifact.acceptance;
 
 
+import static org.junit.Assert.assertTrue;
+
+import java.net.InetSocketAddress;
+import java.net.Proxy;
+import java.net.URL;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
-import java.net.InetSocketAddress;
-import java.net.Proxy;
-import java.net.URL;
-import com.alefol.mySpringBootArtifact.retry.Retry;
-
-import static org.junit.Assert.assertTrue;
 
 
 public class ApplicationE2E{

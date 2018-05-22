@@ -7,7 +7,6 @@ package com.alefol.mySpringBootArtifact.retry;
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
-import com.alefol.mySpringBootArtifact.retry.*;
 import javax.validation.constraints.NotNull;
 import java.util.Arrays;
 
