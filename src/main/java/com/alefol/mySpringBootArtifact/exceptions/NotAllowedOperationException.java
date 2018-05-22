@@ -8,6 +8,11 @@ package com.alefol.mySpringBootArtifact.exceptions;
 public class NotAllowedOperationException extends RuntimeException {
 
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
      *
      * @param message the message
      */

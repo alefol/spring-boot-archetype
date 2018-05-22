@@ -1,7 +1,6 @@
 com\alefol\mySpringBootArtifact\exceptions\ResourceNotFoundException.class
 com\alefol\mySpringBootArtifact\exceptions\NotAllowedOperationException.class
 com\alefol\mySpringBootArtifact\Application.class
-com\alefol\mySpringBootArtifact\web\ApplicationController.class
 com\alefol\mySpringBootArtifact\service\PersonneService.class
 com\alefol\mySpringBootArtifact\bean\PersonneBean.class
 com\alefol\mySpringBootArtifact\web\ErrorHandler$ERROR_CODE.class
