@@ -37,6 +37,10 @@ public class PersonneService {
     	}
     	return personneBean;
     }
+    
+    public PersonneBean getPersonneByEmail(String email) {
+    	return personneRepository.findByEmail(email);
+    }
 
 
 }

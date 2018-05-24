@@ -4,14 +4,20 @@ import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 
-@Entity()
-public class PersonneBean implements UserDetails {
 
+@Entity()
+@Table(name = "PERSONNE") 
+public class PersonneBean implements UserDetails  {
+
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = -945179789247722949L;
 
 	@Id
@@ -62,6 +68,7 @@ public class PersonneBean implements UserDetails {
 		return null;
 	}
 
+	
 	@Override
 	public String getPassword() {
 		return password;

@@ -98,6 +98,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <jvmArguments>-Xmx512m -XX:MaxDirectMemorySize=1200m</jvmArguments>
+                    <fork>false</fork>
                 </configuration>
                 <executions>
                     <execution>

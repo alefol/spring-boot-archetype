@@ -20,7 +20,7 @@ public class AuthenticationController {
     
     @RequestMapping(value = "/isLogged", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
-    public boolean isLogged() {
+    public boolean   isLogged() {
     	//TODO implémenter vérification de la connexion
     	return true;
     }
