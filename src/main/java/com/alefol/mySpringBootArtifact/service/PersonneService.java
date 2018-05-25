@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.alefol.mySpringBootArtifact.bean.PersonneBean;
 import com.alefol.mySpringBootArtifact.exceptions.ExceptionsMessages;
+import com.alefol.mySpringBootArtifact.exceptions.FieldMissingException;
 import com.alefol.mySpringBootArtifact.exceptions.ResourceNotFoundException;
 import com.alefol.mySpringBootArtifact.repository.PersonneRepository;
 
@@ -22,8 +23,11 @@ public class PersonneService {
     private PersonneRepository personneRepository;
 
     @Transactional
-    public void createPersonne(PersonneBean personne) {
-        personneRepository.save(personne);
+    public Long createPersonne(PersonneBean personne) {
+    	if(personne == null || personne.getEmail() == null) {
+    		throw new FieldMissingException(ExceptionsMessages.PERSONNE_FIELD_MISSING);
+    	}
+		return personneRepository.save(personne).getId();
     }
 
     public List<PersonneBean> getAllPersonnes() {
@@ -37,6 +41,5 @@ public class PersonneService {
     	}
     	return personneBean;
     }
-
 
 }
