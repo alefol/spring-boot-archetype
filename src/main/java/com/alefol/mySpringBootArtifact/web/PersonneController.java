@@ -18,7 +18,6 @@ import com.alefol.mySpringBootArtifact.service.PersonneService;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/personne")
 public class PersonneController {
 
@@ -48,6 +47,12 @@ public class PersonneController {
     @ResponseBody
     public Long createPersonne(@RequestBody PersonneBean personne) {
     	return this.personneService.createPersonne(personne);
+    }
+    
+    @RequestMapping(value = "/{personneId}", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deletePersonne(@PathVariable("personneId")Long personneId) {
+    	this.personneService.deleteById(personneId);
     }
 
 }

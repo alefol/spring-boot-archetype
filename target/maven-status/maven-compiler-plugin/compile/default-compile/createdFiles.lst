@@ -1,5 +1,8 @@
 com\alefol\mySpringBootArtifact\exceptions\ResourceNotFoundException.class
 com\alefol\mySpringBootArtifact\exceptions\NotAllowedOperationException.class
+com\alefol\mySpringBootArtifact\web\AuthenticationController.class
+com\alefol\mySpringBootArtifact\exceptions\FieldMissingException.class
+com\alefol\mySpringBootArtifact\web\PersonneController.class
 com\alefol\mySpringBootArtifact\Application.class
 com\alefol\mySpringBootArtifact\service\PersonneService.class
 com\alefol\mySpringBootArtifact\bean\PersonneBean.class
@@ -8,3 +11,5 @@ com\alefol\mySpringBootArtifact\web\dto\CustomErrorResponse.class
 com\alefol\mySpringBootArtifact\service\ScheduledServiceAction.class
 com\alefol\mySpringBootArtifact\web\ErrorHandler.class
 com\alefol\mySpringBootArtifact\repository\PersonneRepository.class
+com\alefol\mySpringBootArtifact\web\dto\PersonneDTO.class
+com\alefol\mySpringBootArtifact\exceptions\ExceptionsMessages.class

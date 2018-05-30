@@ -1,6 +1,7 @@
 C:\Users\Acii\Documents\Projets\spring-boot-archetype\src\main\java\com\alefol\mySpringBootArtifact\exceptions\ExceptionsMessages.java
 C:\Users\Acii\Documents\Projets\spring-boot-archetype\src\main\java\com\alefol\mySpringBootArtifact\repository\PersonneRepository.java
 C:\Users\Acii\Documents\Projets\spring-boot-archetype\src\main\java\com\alefol\mySpringBootArtifact\web\dto\CustomErrorResponse.java
+C:\Users\Acii\Documents\Projets\spring-boot-archetype\src\main\java\com\alefol\mySpringBootArtifact\security\CorsConfiguration.java
 C:\Users\Acii\Documents\Projets\spring-boot-archetype\src\main\java\com\alefol\mySpringBootArtifact\exceptions\ResourceNotFoundException.java
 C:\Users\Acii\Documents\Projets\spring-boot-archetype\src\main\java\com\alefol\mySpringBootArtifact\web\dto\PersonneDTO.java
 C:\Users\Acii\Documents\Projets\spring-boot-archetype\src\main\java\com\alefol\mySpringBootArtifact\service\ScheduledServiceAction.java

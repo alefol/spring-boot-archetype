@@ -41,5 +41,11 @@ public class PersonneService {
     	}
     	return personneBean;
     }
+    
+    public void deleteById(Long id) {
+    	if(id != null) {
+    		this.personneRepository.delete(id);
+    	}
+    }
 
 }
