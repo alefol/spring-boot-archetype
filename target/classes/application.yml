@@ -19,10 +19,8 @@ spring:
 initialDelay: 10000
 fixedDelay: 60000
 
-server:
-  tomcat:
-    accessLog.enabled: true
-    basedir: "${LOG_PATH}/Application"
-    accessLogPattern: "%h %l %u %t \"%r\" %s %b %D"
-
-
+# server:
+#  tomcat:
+#    accessLog.enabled: true
+#    basedir: "${LOG_PATH}/Application"
+#    accessLogPattern: "%h %l %u %t \"%r\" %s %b %D"
