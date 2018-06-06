@@ -68,6 +68,10 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
   			<groupId>org.modelmapper</groupId>
   			<artifactId>modelmapper</artifactId>
             <version>${modelmapper-version}</version>
@@ -91,6 +95,7 @@
                 <configuration>
                  	<fork>false</fork>
                     <jvmArguments>-Xmx512m -XX:MaxDirectMemorySize=1200m</jvmArguments>
+                    <fork>false</fork>
                 </configuration>
                 <executions>
                     <execution>

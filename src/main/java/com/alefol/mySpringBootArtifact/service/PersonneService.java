@@ -14,9 +14,6 @@ import com.alefol.mySpringBootArtifact.exceptions.ResourceNotFoundException;
 import com.alefol.mySpringBootArtifact.repository.PersonneRepository;
 
 
-/**
- * Created by MRomeh
- */
 @Service
 public class PersonneService {
     @Autowired
@@ -46,6 +43,10 @@ public class PersonneService {
     	if(id != null) {
     		this.personneRepository.delete(id);
     	}
+    }
+
+    public PersonneBean getPersonneByEmail(String email) {
+    	return personneRepository.findByEmail(email);
     }
 
 }
