@@ -5,7 +5,6 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,13 +18,12 @@ import com.alefol.mySpringBootArtifact.service.PersonneService;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/personne")
 public class PersonneController {
 
     private static final Logger log = LoggerFactory.getLogger(PersonneController.class);
     
-//    @Autowired
+//    @Autowiredr
 //    private ModelMapper modelMapper;
 
     @Autowired
