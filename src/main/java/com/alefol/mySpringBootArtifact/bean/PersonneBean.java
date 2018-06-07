@@ -1,6 +1,7 @@
 package com.alefol.mySpringBootArtifact.bean;
 import java.util.Collection;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,7 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 
 
-
+@Entity
 @Table(name = "PERSONNE") 
 public class PersonneBean implements UserDetails  {
 
