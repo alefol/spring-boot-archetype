@@ -11,6 +11,8 @@ import javax.persistence.Table;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 
 @Entity
@@ -35,6 +37,8 @@ public class PersonneBean implements UserDetails  {
 	
 	private String password;
 
+	
+	@JsonIgnore
 	public String getPassword() {
 		return password;
 	}
