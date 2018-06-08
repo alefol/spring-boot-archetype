@@ -8,10 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.alefol.mySpringBootArtifact.bean.PersonneBean;
 import com.alefol.mySpringBootArtifact.repository.PersonneRepository;
+import com.alefol.mySpringBootArtifact.security.JwtTokenFilter;
 
 @RestController
 @RequestMapping("/auth")
 public class AuthenticationController {
+	
+	@Autowired
+	JwtTokenFilter tokenFilter;
 	
 	@Autowired
 	PersonneRepository personneRep;
@@ -19,13 +23,13 @@ public class AuthenticationController {
     @RequestMapping(value = "/login", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
     public PersonneBean login() {
-    	PersonneBean personne = personneRep.findByEmail("test@acii.fr");
-    	return personne;
+    	tokenFilter.doFilter(servletRequest, servletResponse, filterChain);
+    	return null;
     }
     
     @RequestMapping(value = "/isLogged", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
-    public boolean   isLogged() {
+    public boolean isLogged() {
     	//TODO implémenter vérification de la connexion
     	return true;
     }

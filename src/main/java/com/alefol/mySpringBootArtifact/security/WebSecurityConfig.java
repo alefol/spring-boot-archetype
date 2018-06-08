@@ -14,6 +14,9 @@ import com.alefol.mySpringBootArtifact.service.UserService;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+	
+    public final static String AUTHORIZATION_HEADER = "Authorization";
+	
 	@Autowired
 	UserService userService;
 	
