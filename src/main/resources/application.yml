@@ -15,8 +15,8 @@ spring:
     password: admin
     driver-class-name: org.postgresql.Driver
     
-spring.security.authentication.jwt.validity: 1000
-spring.security.authentication.jwt.secret
+spring.security.authentication.jwt.validity: 604800000
+spring.security.authentication.jwt.secret: ILikeTrains
 
 initialDelay: 10000
 fixedDelay: 60000

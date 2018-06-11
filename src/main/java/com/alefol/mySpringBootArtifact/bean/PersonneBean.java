@@ -1,4 +1,5 @@
 package com.alefol.mySpringBootArtifact.bean;
+import java.util.Arrays;
 import java.util.Collection;
 
 import javax.persistence.Entity;
@@ -36,6 +37,8 @@ public class PersonneBean implements UserDetails  {
 	private String email;
 	
 	private String password;
+	
+	private String[] ROLES = {"USER"};
 
 	
 	@JsonIgnore

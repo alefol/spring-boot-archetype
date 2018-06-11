@@ -1,6 +1,6 @@
 package com.alefol.mySpringBootArtifact.web.dto;
 
-public class AuthenticationDTO {
+public class UserDTO {
 	
 	private String login;
 	
