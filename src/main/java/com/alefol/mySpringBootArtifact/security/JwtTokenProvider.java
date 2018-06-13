@@ -16,6 +16,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Claims;
@@ -55,7 +56,7 @@ public class JwtTokenProvider {
 
         Collection<? extends GrantedAuthority> authorities = Arrays.asList(claims.get(AUTHORITIES_KEY).toString().split(",")).stream()
                     .map(authority -> new SimpleGrantedAuthority(authority)).collect(Collectors.toList());
-        
+                
 
         User principal = new User(claims.getSubject(), "", authorities);
 

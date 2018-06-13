@@ -40,6 +40,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
             this.resetAuthenticationAfterRequest();
         } catch (RuntimeException eje) {
             ((HttpServletResponse) servletResponse).setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            System.out.println(eje);
             LOGGER.debug("Exception " + eje.getMessage(), eje);
         }
     }

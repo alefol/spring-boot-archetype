@@ -1,6 +1,8 @@
 package com.alefol.mySpringBootArtifact.bean;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +12,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -38,9 +41,9 @@ public class PersonneBean implements UserDetails  {
 	
 	private String password;
 	
-	private String[] ROLES = {"USER"};
+	private boolean isAdmin;
 
-	
+
 	@JsonIgnore
 	public String getPassword() {
 		return password;
@@ -81,10 +84,26 @@ public class PersonneBean implements UserDetails  {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public boolean isAdmin() {
+		return isAdmin;
+	}
+
+	public void setAdmin(boolean isAdmin) {
+		this.isAdmin = isAdmin;
+	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return null;
+		List<GrantedAuthority> authorities = new ArrayList<>();
+		if(isAdmin) {
+			authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+		}
+		else {
+			authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
+		}
+		
+		return authorities;
 	}
 
 	@Override
