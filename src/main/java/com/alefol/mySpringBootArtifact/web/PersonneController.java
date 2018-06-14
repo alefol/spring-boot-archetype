@@ -47,6 +47,7 @@ public class PersonneController {
     @RequestMapping(method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
     @ResponseBody
     public Long createPersonne(@RequestBody PersonneBean personne) {
+    	personne.setAdmin(false);
     	return this.personneService.createPersonne(personne);
     }
     

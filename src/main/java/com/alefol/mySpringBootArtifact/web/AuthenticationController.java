@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.alefol.mySpringBootArtifact.bean.PersonneBean;
 import com.alefol.mySpringBootArtifact.repository.PersonneRepository;
 import com.alefol.mySpringBootArtifact.security.JwtTokenFilter;
 import com.alefol.mySpringBootArtifact.security.JwtTokenProvider;
@@ -51,5 +52,10 @@ public class AuthenticationController {
     @ResponseBody
     public boolean isLogged(HttpServletRequest request) {
     	return true;
+    }
+    
+    @RequestMapping(value = "/signup", method = RequestMethod.POST)
+    public double inscription(@RequestBody PersonneBean personne) {
+    	return this.personneRep.save(personne).getId();
     }
 }
