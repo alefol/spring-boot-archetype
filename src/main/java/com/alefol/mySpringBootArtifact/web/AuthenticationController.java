@@ -7,6 +7,8 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -34,6 +36,8 @@ public class AuthenticationController {
 	
 	@Autowired
 	PersonneRepository personneRep;
+	
+	private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json")
     @ResponseBody
@@ -56,6 +60,9 @@ public class AuthenticationController {
     
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public double inscription(@RequestBody PersonneBean personne) {
+    	String password = passwordEncoder.encode(personne.getPassword());
+    	personne.setPassword(password);
     	return this.personneRep.save(personne).getId();
     }
+    
 }

@@ -42,7 +42,6 @@ public class PersonneBean implements UserDetails  {
 	private boolean isAdmin;
 
 
-	@JsonIgnore
 	public String getPassword() {
 		return password;
 	}
