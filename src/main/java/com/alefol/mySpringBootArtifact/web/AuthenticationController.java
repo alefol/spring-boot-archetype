@@ -39,7 +39,7 @@ public class AuthenticationController {
 	
 	private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json")
+    @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "text/plain")
     @ResponseBody
     public String login(@RequestBody UserDTO user) {
     	Authentication authentication = authenticationManager.authenticate(

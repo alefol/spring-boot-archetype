@@ -32,6 +32,7 @@
         <project.artifact.name>${project.artifactId}</project.artifact.name>
         <build.number>LOCAL</build.number>
         <modelmapper-version>1.1.0</modelmapper-version>
+        <postgresql-version>42.2.2</postgresql-version>
 
     </properties>
 
@@ -79,7 +80,7 @@
         <dependency>
 		    <groupId>org.postgresql</groupId>
 		    <artifactId>postgresql</artifactId>
-		    <version>42.2.2</version>
+		    <version>${postgresql-version}</version>
 		</dependency>
 		<dependency>
 	        <groupId>io.jsonwebtoken</groupId>
