@@ -1,6 +1,7 @@
 package com.alefol.mySpringBootArtifact.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.Http401AuthenticationEntryPoint;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -51,7 +52,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	        .antMatchers("/auth/**")
 	        	.permitAll()
 	        .anyRequest()
-	        	.authenticated();
+	        	.authenticated()
+        .and()
+        .exceptionHandling()
+        	.authenticationEntryPoint(new Http401AuthenticationEntryPoint("plop"));
+        
     }
 
     @Bean
