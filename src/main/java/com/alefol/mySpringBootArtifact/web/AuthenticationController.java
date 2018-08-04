@@ -1,7 +1,12 @@
 package com.alefol.mySpringBootArtifact.web;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -39,9 +44,9 @@ public class AuthenticationController {
 	
 	private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "text/plain")
+    @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json")
     @ResponseBody
-    public String login(@RequestBody UserDTO user) {
+    public Map<String, String> login(@RequestBody UserDTO user) {
     	Authentication authentication = authenticationManager.authenticate(
     			new UsernamePasswordAuthenticationToken(user.getLogin(), user.getPassword())
     	);
@@ -49,7 +54,10 @@ public class AuthenticationController {
     	SecurityContextHolder.getContext().setAuthentication(authentication);
     	String jwt = tokenProvider.createToken(authentication);
     	
-    	return jwt;	
+    	Map<String, String> tokenJwt = new HashMap<>();
+    	tokenJwt.put("token", jwt);
+    	
+    	return tokenJwt;	
     }
     
     @RequestMapping(value = "/isLogged", method = RequestMethod.GET, produces = "application/json")
