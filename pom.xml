@@ -32,6 +32,7 @@
         <project.artifact.name>${project.artifactId}</project.artifact.name>
         <build.number>LOCAL</build.number>
         <modelmapper-version>1.1.0</modelmapper-version>
+        <postgresql-version>42.2.2</postgresql-version>
 
     </properties>
 
@@ -55,10 +56,6 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
@@ -72,6 +69,10 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
   			<groupId>org.modelmapper</groupId>
   			<artifactId>modelmapper</artifactId>
             <version>${modelmapper-version}</version>
@@ -79,8 +80,13 @@
         <dependency>
 		    <groupId>org.postgresql</groupId>
 		    <artifactId>postgresql</artifactId>
-		    <version>42.2.2</version>
+		    <version>${postgresql-version}</version>
 		</dependency>
+		<dependency>
+	        <groupId>io.jsonwebtoken</groupId>
+	        <artifactId>jjwt</artifactId>
+	        <version>0.2</version>
+    	</dependency>
     </dependencies>
 
 
@@ -95,6 +101,7 @@
                 <configuration>
                  	<fork>false</fork>
                     <jvmArguments>-Xmx512m -XX:MaxDirectMemorySize=1200m</jvmArguments>
+                    <fork>false</fork>
                 </configuration>
                 <executions>
                     <execution>
