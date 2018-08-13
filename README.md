@@ -1,8 +1,8 @@
-# The MySpringBootArtifact Project
+# Archetype Spring Boot
 
 ## About
 
-Describe your project here.
+Ce projet a pour but de servir de base à la création de futures applications. Il repose sur le framework Spring Boot. 
 
 ## Technical Stack
 
@@ -26,8 +26,8 @@ Describe your project here.
 1- VM parameter: -DLOG_PATH=../log
 2- Set SPRING profile to LOCAL 
 
-## License
+## TODO
 
-This software is licensed under the [BSD License][BSD]. For more information, read the file [LICENSE](LICENSE).
-
-[BSD]: https://opensource.org/licenses/BSD-3-Clause
+* Màj version Spring Boot
+* Mapping d'entité Bean vers DTO
+* Authentification Google et Facebook
