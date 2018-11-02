@@ -2,6 +2,8 @@ package com.alefol.mySpringBootArtifact.web;
 
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.alefol.mySpringBootArtifact.bean.PersonneBean;
 import com.alefol.mySpringBootArtifact.service.PersonneService;
+import com.alefol.mySpringBootArtifact.web.dto.PersonneDTO;
 
 
 @RestController
@@ -24,8 +27,8 @@ public class PersonneController {
 
     private static final Logger log = LoggerFactory.getLogger(PersonneController.class);
     
-//    @Autowiredr
-//    private ModelMapper modelMapper;
+    @Autowired
+    private ModelMapper modelMapper;
 
     @Autowired
     private PersonneService personneService;
@@ -33,15 +36,16 @@ public class PersonneController {
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
-    public List<PersonneBean> getAllPersonnes() {
+    public List<PersonneDTO> getAllPersonnes() {
         log.debug("Récupération de l'ensemble des personnes");
-        return personneService.getAllPersonnes();
+        List<PersonneBean> listePersonnes = personneService.getAllPersonnes();
+        return modelMapper.map(listePersonnes, new TypeToken<List<PersonneDTO>>() {}.getType());
     }
     
     @RequestMapping(value = "/{personneId}", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
-    public PersonneBean getById(@PathVariable("personneId") long id) {
-		return personneService.getPersonneById(id);
+    public PersonneDTO getById(@PathVariable("personneId") long id) {
+		return modelMapper.map(personneService.getPersonneById(id), PersonneDTO.class);
     }
     
     @RequestMapping(method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
@@ -60,8 +64,8 @@ public class PersonneController {
     
     @RequestMapping(value = "/email", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
-    public PersonneBean getByEmail(@RequestParam("email") String email) {
-		return personneService.getPersonneByEmail(email);
+    public PersonneDTO getByEmail(@RequestParam("email") String email) {
+		return modelMapper.map(personneService.getPersonneByEmail(email), PersonneDTO.class);
     }
 
 }
