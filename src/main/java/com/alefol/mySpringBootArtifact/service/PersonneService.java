@@ -2,6 +2,7 @@ package com.alefol.mySpringBootArtifact.service;
 
 import java.text.MessageFormat;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,16 +33,16 @@ public class PersonneService {
     }
     
     public PersonneBean getPersonneById(long id) {
-    	PersonneBean personneBean = personneRepository.findOne(id);
-    	if(personneBean == null) {
+    	Optional<PersonneBean> personneBean = personneRepository.findById(id);
+    	if(!personneBean.isPresent()) {
     		throw new ResourceNotFoundException(MessageFormat.format(ExceptionsMessages.PERSONNE_NOT_FOUND, id));
     	}
-    	return personneBean;
+    	return personneBean.get();
     }
     
     public void deleteById(Long id) {
     	if(id != null) {
-    		this.personneRepository.delete(id);
+    		this.personneRepository.deleteById(id);
     	}
     }
 
