@@ -15,8 +15,8 @@ services:
         networks:
             - webnet
             
-    db:
-        image: postgres
+    database:
+        image: mypostgres
         ports:
             - "5432:5432"
         restart: always

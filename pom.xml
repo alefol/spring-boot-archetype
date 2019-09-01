@@ -15,12 +15,9 @@
     </modules>
 
     <groupId>com.alefol.mySpringBootArtifact</groupId>
-	    <artifactId>parent</artifactId>
-	    <version>1.0.0-SNAPSHOT</version>
+	<artifactId>parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-
-    <name>mySpringBootArtifact</name>
-    <description>mySpringBootArtifact project for Spring Boot</description>
  
   <properties>
     <maven.compiler.source>1.7</maven.compiler.source>
